@@ -1,0 +1,9 @@
+<div>Employees</div>
+<ul *ngFor="let item of employees$ | async">
+  <li>{{ item.FirstName }}</li>
+  <li>{{ item.LastName }}</li>
+  <li>{{ item.EmployeeAddressId }}</li>
+  <div>
+    <button [routerLink]="['employeeView/', item.Id]">View</button>
+  </div>
+</ul>

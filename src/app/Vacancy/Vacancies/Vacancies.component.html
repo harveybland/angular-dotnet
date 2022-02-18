@@ -1,0 +1,11 @@
+<div>Vacancies</div>
+<ul *ngFor="let item of vacancies$ | async">
+  <li>{{ item.JobTitle }}</li>
+  <li>{{ item.InternalTitle }}</li>
+  <li>{{ item.Location }}</li>
+  <li>{{ item.Salary }}</li>
+  <li>{{ item.BusinessArea }}</li>
+  <div>
+    <button [routerLink]="['vacancyView/', item.Id]">View</button>
+  </div>
+</ul>
