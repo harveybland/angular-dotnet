@@ -1,5 +1,5 @@
-<div>
-  <div>Vacancy</div>
+<div class="m-b">
+  <h2>Vacancy</h2>
   <ul>
     <li>{{ this.vacancy?.JobTitle }}</li>
     <li>{{ this.vacancy?.InternalTitle }}</li>
@@ -9,8 +9,62 @@
   </ul>
 </div>
 
+<div class="m-b">
+  <h2>Applicants</h2>
+  <ul>
+    <li>{{ this.firstName }}</li>
+    <li>{{ this.lastName }}</li>
+    <li>{{ this.gender }}</li>
+  </ul>
+</div>
+
 <div>
-  <div>Apply for job</div>
-  <div></div>
-  <div></div>
+  <h2 class="m-b">Apply for this vacancy</h2>
+  <div class="m-b">
+    <p>Choose an existing employee</p>
+    <ng-select
+      [items]="employees$ | async"
+      bindLabel="FirstName"
+      bindValue="Id"
+      [clearable]="true"
+    >
+    </ng-select>
+  </div>
+
+  <div [formGroup]="form">
+    <p>Add a new employee</p>
+    <div class="m-b">
+      <label>
+        <div>
+          <span class="input__title">First Name</span>
+        </div>
+        <input
+          name="FirstName"
+          formControlName="FirstName"
+          placeholder="First Name"
+        />
+      </label>
+    </div>
+    <div class="m-b">
+      <label>
+        <div>
+          <span class="input__title">Last Name</span>
+        </div>
+        <input
+          name="LastName"
+          formControlName="LastName"
+          placeholder="Last Name"
+        />
+      </label>
+    </div>
+    <div class="m-b">
+      <label>
+        <div>
+          <span class="input__title">Gender</span>
+        </div>
+        <input name="Gender" formControlName="Gender" placeholder="Gender" />
+      </label>
+    </div>
+    <button (click)="addEmployee()">Apply</button>
+  </div>
 </div>

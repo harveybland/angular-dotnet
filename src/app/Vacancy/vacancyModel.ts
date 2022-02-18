@@ -9,5 +9,5 @@ export interface Vacancy {
     Salary?: number;
     SalaryType?: string;
     BusinessArea?: string;
-    EmployeeId?: EmployeeView
+    Employee?: EmployeeView
 }

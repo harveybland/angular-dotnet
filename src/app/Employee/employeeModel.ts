@@ -1,9 +1,16 @@
 export interface Employee {
     id: number;
     FirstName?: string;
-    LastName: string;
-    Gender: string;
-    EmployeeAddressId: number;
+    LastName?: string;
+    Gender?: string;
+    EmployeeAddressId?: number;
+}
+
+export interface employeeDto {
+    FirstName?: string;
+    LastName?: string;
+    Gender?: string;
+    EmployeeAddressId?: number;
 }
 
 export interface EmployeeView {

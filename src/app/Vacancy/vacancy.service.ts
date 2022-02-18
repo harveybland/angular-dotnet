@@ -1,3 +1,4 @@
+import { Employee, employeeDto } from './../Employee/employeeModel';
 import { Vacancy } from './vacancyModel';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -16,13 +17,16 @@ export class VacancyService {
 
   getVacancies() {
     return this.http.get<Vacancy[]>('https://localhost:44346/api/Vacancy').pipe(map(resp => {
-      console.log(resp)
-      this._vacancies$.next(resp)
+      this._vacancies$.next(resp.sort())
     }))
   }
 
   getVacancy(id: number) {
     return this.http.get<Vacancy>('https://localhost:44346/api/Vacancy/' + id)
+  }
+
+  addEmployee(model: employeeDto) {
+    return this.http.post<Vacancy>('https://localhost:44346/api/Employee', model)
   }
 
 }

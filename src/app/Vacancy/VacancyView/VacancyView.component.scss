@@ -1,5 +1,6 @@
 ul {
   display: flex;
+  padding: 0;
 }
 
 li {
@@ -7,4 +8,21 @@ li {
   margin-right: 10px;
   color: #000;
   font-size: 18px;
+}
+
+.m-b {
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.ng-select {
+  width: 30%;
+}
+
+h2 {
+  font-size: 20px;
 }

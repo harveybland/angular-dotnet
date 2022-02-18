@@ -1,3 +1,4 @@
+import { ThirdPartyModule } from './../modules/third-party/third-party.module';
 import { EmployeesComponent } from './Employees/Employees.component';
 import { CreateEditEmployeeComponent } from './Create-edit-employee/Create-edit-employee.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -30,6 +31,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    ThirdPartyModule,
     RouterModule.forChild(routes)
   ],
   declarations: [EmployeeComponent,

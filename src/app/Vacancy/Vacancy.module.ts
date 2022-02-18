@@ -1,3 +1,5 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { ThirdPartyModule } from './../modules/third-party/third-party.module';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -30,11 +32,14 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    ThirdPartyModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     VacancyComponent,
     VacanciesComponent,
+    VacancyViewComponent
   ]
 })
 export class VacancyModule { }
